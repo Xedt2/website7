@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        body{
+            margin: 0;
+            user-select: none;
+            cursor: crosshair;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+        width: 0px;
+        }
+        .screen{
+            width: 100%;
+            height: 201vh;
+            background-color: #202020;
+        }
+        .header{
+            height: 52px;
+            width: 100%;
+            background-color: rgba(96, 96, 96, 0.7);
+            position: fixed;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo{
+            color: white;
+            font-family: 'Poppins';
+            position: absolute;
+            left: 20px;           
+        }
+        .blogbuttonheader{
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            left: 93%;
+            background-color: transparent;
+            border: solid;
+            border-color: transparent;
+            color: rgb(207, 204, 204);
+            font-family: 'poppins';
+            font-size:17px;
+            transition: 0.2s;
+        }
+        .blogbuttonheader:after{
+            content: ' ';
+            transition: 0.2s;
+            width: 0.1px;
+            height: 0.1px;
+            background-color: rgb(255, 255, 255);
+        }
+        .blogbuttonheader:hover::after{
+            content: ' ';
+            position: absolute;
+            bottom: 20%;
+            left: 40%;
+            width: 20px;
+            height: 1px;
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255);
+            transition: 0.2s;
+        }
+        .blogbuttonheader:hover{
+            color: white;
+            cursor: crosshair;
+        }
+        .uphalf{
+            background-color: rgb(0, 0, 0);
+            width: 100%;
+            height: 45%;
+            display: flex;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        .leftup{
+            width: 50%;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            border-bottom-left-radius: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .rightup{
+            width: 50%;
+            height: 100%;
+            background-color: #f2f2f2;
+            border-bottom-right-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            overflow: hidden;
+        }
+        .title{
+            color: white;
+            font-size: 50px;
+            font-family: 'Poppins',Arial,sans-serif;
+            position: absolute;
+            bottom: 50%;
+            left: 2.5%;
+        }
+        .titletext{
+            color: rgb(90, 89, 89);
+            font-size: 20px;
+            font-family: 'Poppins',Arial,sans-serif;
+            position: absolute;
+            bottom: 50%;
+            left: 2.8%;
+        }
+        .point11,.point22,.point33,.point44,.point55{
+            width: 10px;
+            height: 10px;
+            background-color:#0088ff;
+            border-radius: 100%;
+            transition: 0.3s;
+        }       
+        .point11:before,.point22:before,.point33:before,.point44:before,.point55:before{
+            content: ' ';
+            transition: 0.2s;
+            color: rgb(152, 148, 148);
+        }
+        .point:hover{
+            background-color: red;
+        }
+        #point1{
+            position: absolute;
+            top: 33%;
+        }
+        #point2{
+            position: absolute;
+            top: 32%;
+            left: 57%;
+        }
+        #point3{
+            position: absolute;
+            top: 60%;
+            left: 62%;
+        }
+        #point4{
+            position: absolute;
+            top: 50%;
+            left: 86%;
+        }
+        #point5{
+            position: absolute;
+            top: 80%;
+            left: 79%;
+        }
+        .point11:hover::before{
+            content: ' Kein Bock mehr...';
+            font-family: 'Poppins',Arial;
+            color: rgb(152, 148, 148);
+            position: absolute;
+            bottom: 100%;
+            left: -900%;
+            height: 190px;
+            width: 230px;
+            border-radius: 20px;
+            transition: 0.2s;
+            background-color:#f2f2f2;
+            box-shadow: 12px 12px 15px #cecece, -12px -12px 15px #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .point22:hover::before{
+            content: ' Kein Bock mehr...';
+            font-family: 'Poppins',Arial;
+            color: rgb(152, 148, 148);
+            position: absolute;
+            bottom: 100%;
+            left: -900%;
+            height: 190px;
+            width: 230px;
+            border-radius: 20px;
+            transition: 0.2s;
+            background-color:#f2f2f2;
+            box-shadow: 12px 12px 15px #cecece, -12px -12px 15px #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .point33:hover::before{
+            content: 'Kein Bock mehr... ';
+            font-family: 'Poppins',Arial;
+            color: rgb(152, 148, 148);
+            position: absolute;
+            bottom: 100%;
+            left: -900%;
+            height: 190px;
+            width: 230px;
+            border-radius: 20px;
+            transition: 0.2s;
+            background-color:#f2f2f2;
+            box-shadow: 12px 12px 15px #cecece, -12px -12px 15px #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .point44:hover::before{
+            content: ' Kein Bock mehr...';
+            font-family: 'Poppins',Arial;
+            color: rgb(152, 148, 148);
+            position: absolute;
+            bottom: 100%;
+            left: -900%;
+            height: 190px;
+            width: 230px;
+            border-radius: 20px;
+            transition: 0.2s;
+            background-color:#f2f2f2;
+            box-shadow: 12px 12px 15px #cecece, -12px -12px 15px #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .point55:hover::before{
+            content: 'Kein Bock mehr... ';
+            font-family: 'Poppins',Arial;
+            color: rgb(152, 148, 148);
+            position: absolute;
+            bottom: 100%;
+            left: -900%;
+            height: 190px;
+            width: 230px;
+            border-radius: 20px;
+            transition: 0.2s;
+            background-color:#f2f2f2;
+            box-shadow: 12px 12px 15px #cecece, -12px -12px 15px #ffffff;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .downhalf{
+            background-color: #202020 ;
+            width: 100%;
+            height: 50%;
+            margin-top: 3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .downscreen{
+            width: 80%;
+            height: 90%;
+            margin-top: 0%;
+            background-color: #202020;
+            border-radius: 25px;
+            box-shadow: 14px 14px 25px #1b1b1b, -14px -14px 25px #252525;
+            transition: 0.2s;
+            display: flex;
+        }
+        .downscreen:hover{
+            box-shadow: 14px 14px 35px #191919, -14px -14px 35px #272727;
+        }
+        .downtext{
+            color:rgb(120, 120, 120);
+            font-size: 30px;
+            font-weight: 300;
+            font-family: 'Poppins',Arial, Helvetica, sans-serif;
+        }
+        .downscreenleft{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+        .leftdown1{
+            width: 80%;
+            height: 45%;
+            margin-top: 2%;
+            background-color: #666666;
+            margin-right: 2%;
+            border-radius: 20px;
+        }
+        .leftdown2{
+            width: 80%;
+            height: 45%;
+            margin-right: 2%;
+            border-radius: 20px;
+        }
+        .downscreenright{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .rightdown{
+            width: 87%;
+            height: 95%;
+            background-color: transparent;
+            border-radius: 25px;
+            margin-left: 2%;
+            border: solid;
+            border-color: rgb(41, 41, 41);
+            border-width: 1px;
+            transition: 0.3s;
+        }
+        .titledownleft{
+            color: rgb(255, 255, 255) ;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            font-size: 23px;
+            position: absolute;
+            top: 156.5%;
+            left: 19%;
+        }
+        .textdownleft{
+            color: rgb(255, 255, 255) ;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            position: absolute;
+            top: 162.5%;
+            left: 19%; 
+        }
+        .downrighttext{
+            color: rgb(143, 142, 142) ;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            position: absolute;
+            top: 143%;
+            left: 53%; 
+        }
+        .kanye{
+            color: rgb(132, 130, 130) ;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            position: absolute;
+            top: 147%;
+            left: 76%; 
+        }
+        .rightdown:hover{
+            border-color: rgb(66, 66, 66);
+        }
+        .learnmore{
+            width: 95px;
+            height: 40px;
+            position: absolute;
+            font-size: 14px;
+            font-weight: 1px;
+            font-family: 'Poppins';
+            bottom: 46.5%;
+            left: 2.6%;
+            background-color: transparent;
+            color: rgb(159, 156, 156);
+            border: solid;
+            border-color: rgb(70, 70, 70);
+            border-width: 1px;
+            transition: 0.3s;
+        }
+        .learnmore:hover{
+            color: rgb(188, 186, 186);
+            border-color: rgb(89, 88, 88);
+        }
+        .learnmore:active{
+            color: rgb(82, 81, 81);
+            border-color: rgb(58, 58, 58);
+        }
+    </style>
+    <body>
+        <div class="screen">
+            <header class="header">
+                <p class="logo">Xedt</p>
+                <button class="blogbuttonheader">Blog</button>
+            </header>
+           <div class="uphalf">
+                <div class="leftup">                    
+                    <p class="title">We Built Future...</p>
+                    <p class="titletext">Beyond Boundaries.</p>
+                    <button class="learnmore">Learn More</button>
+                </div>
+                <div class="rightup">
+                    <div class="point11" id="point1"></div>
+                    <div class="point22" id="point2"></div>
+                    <div class="point33" id="point3"></div>
+                    <div class="point44" id="point4"></div>
+                    <div class="point55" id="point5"></div>
+                </div>
+            </div>
+            <div class="downhalf">
+                <p class="downtext">Unleash Your Potential</p>
+                <div class="downscreen">
+                    <div class="downscreenleft">
+                        <div class="leftdown1"></div>
+                        <div class="leftdown2">
+                            <p class="titledownleft">Lorem Ipsum</p>
+                            <p class="textdownleft">
+                                Lorem, ipsum dolor sit amet <br>
+                                consectetur adipisicing elit. Corrupti, tempore! Modi <br>
+                                 quos eveniet eius facilis obcaecati a. Molestias, quo <br>
+                                officiis facere doloremque, facilis voluptatum dolor <br>
+                                ad atque ut, natus ex... <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="downscreenright">
+                        <div class="rightdown">
+                            <p class="downrighttext">"I feel like I'm too busy writing history to read it."</p>
+                            <p class="kanye">~Kanye West</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            console.log('Jo...wie gehts?');
+            console.log('Copyright @Xedt');
+        </script>
+    </body>
+</html>
